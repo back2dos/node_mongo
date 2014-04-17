@@ -101,6 +101,8 @@ private typedef DbParamObj = {
 abstract DbParams(DbParamObj) from DbParamObj to DbParamObj {
 	static var wlogin = ~/mongodb:\/\/(.*?):(.*?)@(.*?):(.*?)\/(.*)/;
 	static var anon = ~/mongodb:\/\/(.*?):(.*?)\/(.*)/;
+	public var data(get, never):DbParamObj;
+	inline function get_data():DbParamObj return this;
 	@:from static public function ofString(s:String) {
 		return 
 			if (wlogin.match(s)) {

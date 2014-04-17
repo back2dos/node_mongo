@@ -33,7 +33,12 @@ class TypeInfo {
 					case 'Int', 'Float', 'Bool', 'tinx.node.mongo.ObjectID':
 					default: 
 						if (t.get().meta.has(':equiv')) {}
-						else reject();
+						else {
+							switch t.get().type.getID() {
+								case 'String' | 'Int' | 'Float' | 'Bool': 
+								default: reject();	
+							}
+						}
 				}
 
 			case TInst(t, params):
