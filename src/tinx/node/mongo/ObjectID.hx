@@ -9,7 +9,10 @@ private extern class Native {
 }
 abstract ObjectID<T:{}>(Native) {
 	public function new(?s:String) this = new Native(s); 
-	@:to public function toString():String return this.toString();
+	@:to public function toString():String 
+		return 
+			if (this == null) null;
+			else this.toString();
 	static public function parse<A:{}>(s:String):Outcome<ObjectID<A>, Error> {
 		try {
 			return Success(new ObjectID(s));
