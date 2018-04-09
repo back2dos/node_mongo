@@ -1,0 +1,1 @@
+zip -r package.hxlib src README.md haxelib.json

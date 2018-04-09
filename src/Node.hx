@@ -1,4 +1,4 @@
-package tinx.node;
+package;
 
 #if macro
 import haxe.macro.Expr;
@@ -28,7 +28,7 @@ class Node {
 					var tmp = MacroApi.tempName(),
 						pos = Context.currentPos();
 					args.push(macro @:pos(pos) function (error, result) {
-						if (error != null) $i{tmp}(tink.core.Outcome.Failure(tink.core.Error.withData(error.message, error)));
+						if (error != null) $i{tmp}(tink.core.Outcome.Failure(tink.core.Error.withData(500, error.message, error)));
 						else $i{tmp}(tink.core.Outcome.Success(result));
 					});
 					var ret = macro @:pos(pos) tink.core.Future.async(function ($tmp) {

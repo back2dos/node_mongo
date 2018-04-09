@@ -1,0 +1,14 @@
+{
+	"name": "node_mongo",
+	"url" : "http://haxetink.org/tink_xml",
+	"license": "MIT",
+	"tags": ["tink", "cross", "utility", "xml"],
+	"description": "Node mongo",
+	"version": "0.0.0",
+	"releasenote": "Initial version.",
+	"contributors": ["back2dos"],
+	"dependencies": {
+		"tink_macro": ""
+	},
+	"classPath": "src" 
+}
